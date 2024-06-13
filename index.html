@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Flexbox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Guía Completa de Flexbox</h1>
+        <nav>
+            <ul>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#conceptos-basicos">Conceptos Básicos</a></li>
+                <li><a href="#propiedades">Propiedades</a></li>
+                <li><a href="#ejemplo">Ejemplo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="introduccion">
+        <h2>Introducción</h2>
+        <p>Flexbox es un módulo de diseño de CSS3 que permite una distribución eficiente del espacio entre los elementos de un contenedor, incluso cuando su tamaño es desconocido o dinámico. Es especialmente útil para crear layouts responsivos.</p>
+        <br><br>
+        En CSS, inicialmente se utilizaba el posicionamiento (static, relative, absolute...), los elementos en línea o en bloque (y derivados) o la propiedad float para realizar maquetaciones, lo que a grandes rasgos no dejaba de ser un sistema de creación de diseños bastante tosco que no encajaba con los retos que tenemos en la actualidad: sistemas de escritorio, dispositivos móviles, múltiples resoluciones, etc...
+        <br><br>
+Flex (también llamado flexbox) es un sistema de elementos flexibles que llega con la idea de olvidar estos mecanismos y acostumbrarnos a una mecánica más potente, limpia y personalizable, en la que los elementos HTML se adaptan y colocan automáticamente y es más fácil personalizar los diseños de una página web.
+<br><br>
+<img src="https://i.ytimg.com/vi/1QcpVr4e8dc/maxresdefault.jpg" class="img1" alt="Flexbox introducción">
+    </section>
+
+    <section id="conceptos-basicos">
+        <h2>Conceptos Básicos</h2>
+        <p>El modelo Flexbox se basa en dos componentes principales: el contenedor flex y los elementos flex. El contenedor flex es el elemento padre que aplica la disposición flex, y los elementos flex son los elementos hijos que se distribuyen dentro del contenedor.</p>
+        <br>
+        <h3>¿Qué se puede hacer con una distribución flex?</h3>
+        <br>
+Las distribuciones flex tienen las siguientes características, que podrá explorar en esta guía.
+<br><br>
+Pueden mostrarse como una fila o una columna.
+Respetan el modo de escritura del documento.
+Son de una sola línea por default, pero se les puede pedir que se ajusten a varias líneas.
+Los elementos en el diseño se pueden reordenar visualmente, sin considerar su orden en el DOM.
+El espacio se puede distribuir dentro de los elementos, por lo que se vuelven más grandes y más pequeños según el espacio disponible en su padre.
+El espacio se puede distribuir alrededor de los elementos y las líneas flex en una distribución envolvente, utilizando las propiedades Box Alignment.
+Los elementos en sí se pueden alinear en el eje transversal.
+<br><br>
+        <img src="https://image.slidesharecdn.com/22-css-flexbox-y-grid-240529051330-3651db99/85/Estilos-de-cajas-Flexibles-CSS-Flexbox-y-Grid-pdf-4-320.jpg" class="img2" alt="Flexbox conceptos básicos">
+    </section>
+
+    <section id="propiedades">
+        <h2>Propiedades</h2>
+        <h3>Descripción general de la alineación de Flexbox</h3>
+        <br>
+        Flexbox trajo consigo un conjunto de propiedades para alinear elementos y distribuir el espacio entre ellos. Estas propiedades fueron tan útiles que desde entonces se han movido a su propia especificación, también las encontrará en Grid Layout. Aquí puede averiguar cómo funcionan al usae flexbox.
+        <br><br>
+El conjunto de propiedades se puede dividir en dos grupos. Propiedades de distribución del espacio y propiedades de alineación. Las propiedades que distribuyen el espacio son:
+<br><br>
+justify-content : distribución del espacio en el eje principal.
+align-content : distribución del espacio en el eje transversal.
+place-content : una forma abreviada de configurar las dos propiedades anteriores.
+<br><br>
+<h3>Las propiedades utilizadas para la alineación en flexbox son:</h3>
+<br>
+align-self : alinea un solo elemento en el eje transversal
+align-items : alinea todos los elementos como un grupo en el eje transversal
+<br><br>
+Si está trabajando en el eje principal, las propiedades comienzan con justify-. En el eje transversal comienzan con align-.
+<br><br>
+<h3>Distribuir espacio en el eje principal</h3>
+<br>
+Con el HTML utilizado anteriormente, los elementos flex dispuestos como una fila, hay espacio en el eje principal. Los artículos no son lo suficientemente grandes para llenar completamente el contenedor flex. Los elementos se alinean al comienzo del contenedor flex porque el valor inicial de justify-content es flex-start. Los elementos se alinean al principio y cualquier espacio adicional al final.
+
+Agregue la justify-content al contenedor flex, asígnele un valor de flex-end, y los elementos se alinean al final del contenedor y el espacio libre se coloca al principio.
+<br><br>
+        <h3>Propiedades del Contenedor Flex</h3>
+        <ul>
+            <li><strong>display</strong>: Define un contenedor flex. Valores: <code>flex</code>, <code>inline-flex</code>.</li>
+            <li><strong>flex-direction</strong>: Establece la dirección en que se colocan los elementos flex. Valores: <code>row</code>, <code>row-reverse</code>, <code>column</code>, <code>column-reverse</code>.</li>
+            <li><strong>flex-wrap</strong>: Define si los elementos flex deben ajustarse o no en una nueva línea. Valores: <code>nowrap</code>, <code>wrap</code>, <code>wrap-reverse</code>.</li>
+            <li><strong>justify-content</strong>: Alinea los elementos flex a lo largo del eje principal. Valores: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>.</li>
+            <li><strong>align-items</strong>: Alinea los elementos flex a lo largo del eje transversal. Valores: <code>stretch</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>.</li>
+            <li><strong>align-content</strong>: Alinea las líneas flex cuando hay espacio adicional en el eje transversal. Valores: <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>stretch</code>.</li>
+        </ul>
+        <br><br>
+        <h3>Propiedades de los Elementos Flex</h3>
+        <ul>
+            <li><strong>order</strong>: Define el orden de los elementos flex. Valor inicial: <code>0</code>.</li>
+            <li><strong>flex-grow</strong>: Define el factor de crecimiento de un elemento flex. Valor inicial: <code>0</code>.</li>
+            <li><strong>flex-shrink</strong>: Define el factor de contracción de un elemento flex. Valor inicial: <code>1</code>.</li>
+            <li><strong>flex-basis</strong>: Define la base flexible para un elemento flex. Valor inicial: <code>auto</code>.</li>
+            <li><strong>align-self</strong>: Permite anular la alineación de un elemento flex. Valores: <code>auto</code>, <code>flex-start</code>, <code>flex-end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>.</li>
+        </ul>
+        <br><br>
+        <img src="https://i.ytimg.com/vi/uNGR_WrgsqM/maxresdefault.jpg" class="img3" alt="Flexbox propiedades">
+    </section>
+        
+    <section id="ejemplo">
+        <h2>Ejemplo</h2>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+        <p>En el ejemplo anterior, los elementos se distribuyen en una fila, ocupando el espacio disponible de manera uniforme.</p>
+    </section>
+
+    <footer>
+        <p>2024 Guía de Flexbox. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
